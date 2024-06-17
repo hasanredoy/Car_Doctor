@@ -8,7 +8,7 @@ const MyBookingPage = () => {
   const [booking , setBooking]=useState([])
   const [dlete, setDelete]=useState()
   useEffect(()=>{
-    fetch(`http://localhost:3000/my-booking/api/${session?.data?.user?.email}`)
+    fetch(`https://car-doctor-98lz.vercel.app/my-booking/api/${session?.data?.user?.email}`)
     .then(res => res.json())
     .then(data=>{
       console.log(data);
@@ -17,7 +17,7 @@ const MyBookingPage = () => {
   },[session?.data?.user?.email,dlete])
   const handleDelete=async(id)=>{
     console.log(id);
-    const res =await fetch(`http://localhost:3000/my-booking/api/booking-methods/${id}`,{
+    const res =await fetch(`https://car-doctor-98lz.vercel.app/my-booking/api/booking-methods/${id}`,{
       method:"DELETE"
     })
     const rsp = await res.json()

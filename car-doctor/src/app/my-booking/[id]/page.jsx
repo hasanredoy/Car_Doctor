@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const page = ({params}) => {
   const [service , setService ]=useState()
   const loadSingleData=async()=>{
-   const singleService = await fetch(`http://localhost:3000/my-booking/api/booking-methods/${params.id}`)
+   const singleService = await fetch(`https://car-doctor-98lz.vercel.app/my-booking/api/booking-methods/${params.id}`)
    const data = await singleService.json()
    setService(data?.getBooking)
 
@@ -21,7 +21,7 @@ const page = ({params}) => {
     const update = {
       date
     }
-    const updateService = await fetch(`http://localhost:3000/my-booking/api/booking-methods/${service._id}`,{
+    const updateService = await fetch(`https://car-doctor-98lz.vercel.app/my-booking/api/booking-methods/${service._id}`,{
       method:"PATCH",
       headers:{
         "content-type":"application/json"

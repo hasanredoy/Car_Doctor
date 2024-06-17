@@ -15,7 +15,7 @@ const SignUpPage = () => {
     const user = { name,email, password };
 
     // posting on users collection 
-    const res = await fetch('http://localhost:3000/signUp/api',{
+    const res = await fetch('https://car-doctor-98lz.vercel.app/signUp/api',{
       method:"POST",
       headers:{
         "content-type":"application/json"
